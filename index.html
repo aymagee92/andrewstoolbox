@@ -1,0 +1,76 @@
+<!DOCTYPE html>                                         <!-- tells the browser that this is an HTML5 document. Does not require a closing tag because there's no text in between  -->
+<html>                                                  <!-- this tells the browswer that everything inside the html tag is html code. -->
+    <head>                                              <!-- contains information about the website. also where you load css and javascript files.-->
+        <meta charset="utf-8">                          <!-- utf is type of unicode encoding. encoding translates code into bytes that computers use. type of translator.-->
+        <meta name = "viewport" content ="width=device-width, initial-scale=1">         <!-- this auto adjusts based on the users screen resolution.-->
+        <title>Website Tab Text Here</title>               <!-- This controls the text inside of the tab-->
+        <style>
+            
+            /* Begin top navigation pane */
+            .topnav {
+                overflow: hidden;
+                background-color: #333;
+                display: flex;
+                justify-content: center;
+            }
+
+            .topnav a {
+                float:left;
+                display: block;
+                color: #f2f2f2;
+                text-align: center;
+                padding: 1vw;
+                text-decoration: none;
+                font-size: 16px;
+                
+            }
+
+            .topnav a:hover {
+                background-color: #ddd;
+                color: black
+            }
+
+            .topnav a.active {
+                background-color: #4CAF50;
+                color: white
+            }
+            /* End top navigation pane */
+
+            body{           background-color: beige}
+
+            h1{             text-align: center;
+                            margin-top: 1%;}
+
+            .box{           background-color: white;
+                            width: 70%;
+                            height: 70%;
+                            margin: auto;
+                            overflow: hidden;}
+
+            .halfbreak{     line-height:50%;}
+
+            a { text-decoration: none;
+                font-size: 20px;}             /* this removes the underlines */
+
+
+
+        </style>
+    </head>
+
+    <body>
+        <!-- This is the title of the page-->
+        <h1> Andrew's Toolbox</h1>
+
+        <!-- This is the top dropdowns-->
+        <div class="topnav">
+            <a class = "active" href = "https://scrightnow.webs.com/AndrewsToolbox/">Home</a>
+            <a href="https://scrightnow.webs.com/AndrewsToolbox/Taxation.html">Taxation</a>
+            <a href="https://scrightnow.webs.com/AndrewsToolbox/Investing.html">Investing</a>
+            <a href="https://scrightnow.webs.com/AndrewsToolbox/Videos.html">Videos</a>
+            <a href="https://scrightnow.webs.com/AndrewsToolbox/Blog.html"> Blog </a>
+        </div>
+        <!-- End of dropdown -->
+
+    </body>
+
+</html>

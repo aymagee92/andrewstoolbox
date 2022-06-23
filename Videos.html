@@ -1,0 +1,113 @@
+<!DOCTYPE html>                                         <!-- tells the browser that this is an HTML5 document. Does not require a closing tag because there's no text in between  -->
+<html>                                                  <!-- this tells the browswer that everything inside the html tag is html code. -->
+    <head>                                              <!-- contains information about the website. also where you load css and javascript files.-->
+        <meta charset="utf-8">                          <!-- utf is type of unicode encoding. encoding translates code into bytes that computers use. type of translator.-->
+        <meta name = "viewport" content ="width=device-width, initial-scale=1">         <!-- this auto adjusts based on the users screen resolution.-->
+        <title>Website Tab Text Here</title>               <!-- This controls the text inside of the tab-->
+        <style>
+            
+            /* Begin top navigation pane */
+            .topnav {
+                overflow: hidden;
+                background-color: #333;
+                display: flex;
+                justify-content: center;
+            }
+
+            .topnav a {
+                float:left;
+                display: block;
+                color: #f2f2f2;
+                text-align: center;
+                padding: .5vw 1vw;
+                text-decoration: none;
+                font-size: 16px;
+                
+            }
+
+            .topnav a:hover {
+                background-color: #ddd;
+                color: black
+            }
+
+            .topnav a.active {
+                background-color: #4CAF50;
+                color: white
+            }
+            /* End top navigation pane */
+
+            body{           background-color: beige}
+
+            h1{             text-align: center;
+                            margin-top: 1%;}
+
+            .box{           background-color: white;
+                            width: 70%;
+                            height: 70%;
+                            margin: auto;
+                            overflow: hidden;}
+
+            .halfbreak{     line-height:50%;}
+
+            a { text-decoration: none;
+                font-size: 20px;}             /* this removes the underlines */
+
+            /* begin CSS for video iframe sizing. See https://www.youtube.com/watch?v=l3N10eGgjh8 for more info */
+
+            .responsive-youtube{
+                overflow: hidden;
+                padding-bottom: 50%;
+                position: relative;
+                height: 0;
+            }
+
+            .responsive-youtube iframe {
+                left: 20%;
+                top:0;
+                height:70%;
+                width:70%;
+                position:absolute;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <!-- This is the title of the page-->
+        <h1> Andrew's Toolbox</h1>
+
+        <!-- This is the top dropdowns-->
+        <div class="topnav">
+            <a href = "https://scrightnow.webs.com/AndrewsToolbox/">Home</a>
+            <a href="https://scrightnow.webs.com/AndrewsToolbox/Taxation.html">Taxation</a>
+            <a href="https://scrightnow.webs.com/AndrewsToolbox/Investing.html">Investing</a>
+            <a class = "active" href="https://scrightnow.webs.com/AndrewsToolbox/Videos.html">Videos</a>
+            <a href="https://scrightnow.webs.com/AndrewsToolbox/Blog.html"> Blog </a>
+        </div>
+        <!-- End of dropdown -->
+
+        <br>
+        <br>
+        <br>
+
+        For mobile viewing: click the icon on the video to be taken to the youtube channel.<br>
+        For computer: All videos can be pulled up by clicking on the playlist icon in the top right of the video.<br>
+        
+        <br>
+
+        <div class = "responsive-youtube">
+
+        <iframe 
+            width="560" 
+            height="315" 
+            src="https://www.youtube.com/embed/videoseries?list=PLcONYcKnwfL7h8w3S_6ctNs57kjLFhRfl" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen></iframe>
+
+        </div>
+
+    </body>
+
+</html>

@@ -1,0 +1,656 @@
+<!DOCTYPE html>                                         <!-- tells the browser that this is an HTML5 document. Does not require a closing tag because there's no text in between  -->
+<html>                                                  <!-- this tells the browswer that everything inside the html tag is html code. -->
+    <head>                                              <!-- contains information about the website. also where you load css and javascript files.-->
+        <meta charset="utf-8">                          <!-- utf is type of unicode encoding. encoding translates code into bytes that computers use. type of translator.-->
+        <meta name = "viewport" content ="width=device-width, initial-scale=1">         <!-- this auto adjusts based on the users screen resolution.-->
+        <title>Website Tab Text Here</title>               <!-- This controls the text inside of the tab-->
+        <style>
+            /* Begin top navigation pane */
+            .topnav {
+                overflow: hidden;
+                background-color: #333;
+                display: flex;
+                justify-content: center;
+            }
+
+            .topnav a {
+                float:left;
+                display: block;
+                color: #f2f2f2;
+                text-align: center;
+                padding: .5vw 1vw;
+                text-decoration: none;
+                font-size: 16px;
+                
+            }
+
+            .topnav a:hover {
+                background-color: #ddd;
+                color: black
+            }
+
+            .topnav a.active {
+                background-color: #4CAF50;
+                color: white
+            }
+            /* End top navigation pane */
+
+            body{           background-color: beige}
+
+            h1{             text-align: center;
+                            margin-top: 1%;}
+
+            .box{           background-color: white;
+                            width: 70%;
+                            height: 70%;
+                            margin: auto;
+                            overflow: hidden;}
+
+            .halfbreak{     line-height:50%;}
+
+            a { text-decoration: none;
+                font-size: 20px;}             /* this removes the underlines */
+
+            /* Begin Annuity Green Popout */
+            #popoutIconAnnuity {
+			border: 1px solid black;
+			padding-left: .3em;
+			padding-right: .3em;
+			border-radius: .6em;
+			background-color: lightgreen;
+			cursor: pointer;
+			font-size: 80%;}
+
+            #popoutTextBoxAnnuity {
+            display: none;
+			position: relative;                    /* asbolute makes it stay in the same spot regardless of scroll. Fixed allows it to move when scrolling*/
+			text-align: left;
+			width: 90%;
+			background-color: lightgreen;
+            border: 1px solid Green;
+			padding: 3px;}
+
+            /* Begin Business Activity Codes Green Popout */
+            #popoutIconBusinessActivityCodes {
+			border: 1px solid black;
+			padding-left: .3em;
+			padding-right: .3em;
+			border-radius: .6em;
+			background-color: lightgreen;
+			cursor: pointer;
+			font-size: 80%;}
+
+            #popoutTextBoxBusinessActivityCodes {
+            display: none;
+			position: relative;                    /* asbolute makes it stay in the same spot regardless of scroll. Fixed allows it to move when scrolling*/
+			text-align: left;
+			width: 90%;
+			background-color: lightgreen;
+            border: 1px solid Green;
+			padding: 3px;}
+
+            /* Begin Dependent Filing? Green Popout */
+            #popoutIconDependentFiling {
+			border: 1px solid black;
+			padding-left: .3em;
+			padding-right: .3em;
+			border-radius: .6em;
+			background-color: lightgreen;
+			cursor: pointer;
+			font-size: 80%;}
+
+            #popoutTextBoxDependentFiling {
+            display: none;
+			position: relative;                    /* absolute makes it stay in the same spot regardless of scroll. Fixed allows it to move when scrolling*/
+			text-align: left;
+			width: 90%;
+			background-color: lightgreen;
+            border: 1px solid Green;
+			padding: 3px;}
+
+            /* Begin Dependent Qualification Calculator Green Popout */
+            #popoutIconDepQual {
+			border: 1px solid black;
+			padding-left: .3em;
+			padding-right: .3em;
+			border-radius: .6em;
+			background-color: lightgreen;
+			cursor: pointer;
+			font-size: 80%;}
+
+            #popoutTextBoxDepQual {
+            display: none;
+			position: relative;                    /* absolute makes it stay in the same spot regardless of scroll. Fixed allows it to move when scrolling*/
+			text-align: left;
+			width: 90%;
+			background-color: lightgreen;
+            border: 1px solid Green;
+			padding: 3px;}
+
+            /* Begin IRA Form 8606 Green Popout */
+            #popoutIconIRAForm8606 {
+			border: 1px solid black;
+			padding-left: .3em;
+			padding-right: .3em;
+			border-radius: .6em;
+			background-color: lightgreen;
+			cursor: pointer;
+			font-size: 80%;}
+
+            #popoutTextBoxIRAForm8606 {
+            display: none;
+			position: relative;                    /* asbolute makes it stay in the same spot regardless of scroll. Fixed allows it to move when scrolling*/
+			text-align: left;
+			width: 90%;
+			background-color: lightgreen;
+            border: 1px solid Green;
+			padding: 3px;}
+
+            /* Begin Sales Tax Estimator Green Popout */
+            #popoutIconSalesTax {
+			border: 1px solid black;
+			padding-left: .3em;
+			padding-right: .3em;
+			border-radius: .6em;
+			background-color: lightgreen;
+			cursor: pointer;
+			font-size: 80%;}
+
+            #popoutTextBoxSalesTax {
+            display: none;
+			position: relative;                    /* asbolute makes it stay in the same spot regardless of scroll. Fixed allows it to move when scrolling*/
+			text-align: left;
+			width: 90%;
+			background-color: lightgreen;
+            border: 1px solid Green;
+			padding: 3px;}
+
+            /* Begin Schedule A Line 5 Green Popout */
+            #popoutIconSchALine5 {
+			border: 1px solid black;
+			padding-left: .3em;
+			padding-right: .3em;
+			border-radius: .6em;
+			background-color: lightgreen;
+			cursor: pointer;
+			font-size: 80%;}
+
+            #popoutTextBoxSchALine5 {
+            display: none;
+			position: relative;                    /* asbolute makes it stay in the same spot regardless of scroll. Fixed allows it to move when scrolling*/
+			text-align: left;
+			width: 90%;
+			background-color: lightgreen;
+            border: 1px solid Green;
+			padding: 3px;}
+
+            /* Begin Social Security Taxation Green Popout */
+            #popoutIconSSTaxation {
+			border: 1px solid black;
+			padding-left: .3em;
+			padding-right: .3em;
+			border-radius: .6em;
+			background-color: lightgreen;
+			cursor: pointer;
+			font-size: 80%;}
+
+            #popoutTextBoxSSTaxation {
+            display: none;
+			position: relative;                    /* asbolute makes it stay in the same spot regardless of scroll. Fixed allows it to move when scrolling*/
+			text-align: left;
+			width: 90%;
+			background-color: lightgreen;
+            border: 1px solid Green;
+			padding: 3px;}
+
+            /* Begin State Refund Taxability Calculator Green Popout */
+            #popoutIconStateRefund {
+			border: 1px solid black;
+			padding-left: .3em;
+			padding-right: .3em;
+			border-radius: .6em;
+			background-color: lightgreen;
+			cursor: pointer;
+			font-size: 80%;}
+
+            #popoutTextBoxStateRefund {
+            display: none;
+			position: relative;                    /* asbolute makes it stay in the same spot regardless of scroll. Fixed allows it to move when scrolling*/
+			text-align: left;
+			width: 90%;
+			background-color: lightgreen;
+            border: 1px solid Green;
+			padding: 3px;}
+
+            /* Begin Statutory Employee Green Popout */
+            #popoutIconStatutoryEmployee {
+			border: 1px solid black;
+			padding-left: .3em;
+			padding-right: .3em;
+			border-radius: .6em;
+			background-color: lightgreen;
+			cursor: pointer;
+			font-size: 80%;}
+
+            #popoutTextBoxStatutoryEmployee {
+            display: none;
+			position: relative;                    /* asbolute makes it stay in the same spot regardless of scroll. Fixed allows it to move when scrolling*/
+			text-align: left;
+			width: 90%;
+			background-color: lightgreen;
+            border: 1px solid Green;
+			padding: 3px;}
+
+            /* Begin Standard Deduction Green Popout */
+            #popoutIconSD {
+			border: 1px solid black;
+			padding-left: .3em;
+			padding-right: .3em;
+			border-radius: .6em;
+			background-color: lightgreen;
+			cursor: pointer;
+			font-size: 80%;}
+
+            #popoutTextBoxSD {
+            display: none;
+			position: relative;                    /* asbolute makes it stay in the same spot regardless of scroll. Fixed allows it to move when scrolling*/
+			text-align: left;
+			width: 90%;
+			background-color: lightgreen;
+            border: 1px solid Green;
+			padding: 3px;}
+
+            /* Begin EIC Green Popout */
+            #popoutIconEIC {
+			border: 1px solid black;
+			padding-left: .3em;
+			padding-right: .3em;
+			border-radius: .6em;
+			background-color: lightgreen;
+			cursor: pointer;
+			font-size: 80%;}
+
+            #popoutTextBoxEIC {
+            display: none;
+			position: relative;                    /* asbolute makes it stay in the same spot regardless of scroll. Fixed allows it to move when scrolling*/
+			text-align: left;
+			width: 90%;
+			background-color: lightgreen;
+            border: 1px solid Green;
+			padding: 3px;}
+
+            /* Begin Education Credits Optimizer Popout */
+            #popoutIconEducationOptimize {
+			border: 1px solid black;
+			padding-left: .3em;
+			padding-right: .3em;
+			border-radius: .6em;
+			background-color: lightgreen;
+			cursor: pointer;
+			font-size: 80%;}
+
+            #popoutTextBoxEducationOptimize {
+            display: none;
+			position: relative;                    /* asbolute makes it stay in the same spot regardless of scroll. Fixed allows it to move when scrolling*/
+			text-align: left;
+			width: 90%;
+			background-color: lightgreen;
+            border: 1px solid Green;
+			padding: 3px;}
+
+            /* Begin Fed Tax Calculator Green Popout */
+            #popoutIconFedTax {
+			border: 1px solid black;
+			padding-left: .3em;
+			padding-right: .3em;
+			border-radius: .6em;
+			background-color: lightgreen;
+			cursor: pointer;
+			font-size: 80%;}
+
+            #popoutTextBoxFedTax {
+            display: none;
+			position: relative;                    /* asbolute makes it stay in the same spot regardless of scroll. Fixed allows it to move when scrolling*/
+			text-align: left;
+			width: 90%;
+			background-color: lightgreen;
+            border: 1px solid Green;
+			padding: 3px;}
+
+            /* Begin Withholding Visual Green Popout */
+            #popoutIconWithholdingVisual {
+			border: 1px solid black;
+			padding-left: .3em;
+			padding-right: .3em;
+			border-radius: .6em;
+			background-color: lightgreen;
+			cursor: pointer;
+			font-size: 80%;}
+
+            #popoutTextBoxWithholdingVisual {
+            display: none;
+			position: relative;                    /* asbolute makes it stay in the same spot regardless of scroll. Fixed allows it to move when scrolling*/
+			text-align: left;
+			width: 90%;
+			background-color: lightgreen;
+            border: 1px solid Green;
+			padding: 3px;}
+
+            /* Begin COVID Green Popout */
+            #popoutIconCOVID {
+			border: 1px solid black;
+			padding-left: .3em;
+			padding-right: .3em;
+			border-radius: .6em;
+			background-color: lightgreen;
+			cursor: pointer;
+			font-size: 80%;}
+
+            #popoutTextBoxCOVID {
+            display: none;
+			position: relative;                    /* asbolute makes it stay in the same spot regardless of scroll. Fixed allows it to move when scrolling*/
+			text-align: left;
+			width: 90%;
+			background-color: lightgreen;
+            border: 1px solid Green;
+			padding: 3px;}
+
+
+        </style>
+    </head>
+
+    <body>
+        <!-- This is the title of the page-->
+        <h1> Andrew's Toolbox</h1>
+
+        <!-- This is the top dropdowns-->
+        <div class="topnav">
+            <a href = "https://scrightnow.webs.com/AndrewsToolbox/">Home</a>
+            <a class = "active" href="https://scrightnow.webs.com/AndrewsToolbox/Taxation.html">Taxation</a>
+            <a href="https://scrightnow.webs.com/AndrewsToolbox/Investing.html">Investing</a>
+            <a href="https://scrightnow.webs.com/AndrewsToolbox/Videos.html">Videos</a>
+            <a href="https://scrightnow.webs.com/AndrewsToolbox/Blog.html"> Blog </a>
+        </div>
+        <!-- End of dropdown -->
+
+        <br>
+        <br>
+        <br>
+        
+        <!-- Beginning of Items for Individual Sheet-->
+        <div class = "box">
+        <h2><b> Federal Excel Templates </b></h2>
+        <h3><u> Income </u></h3>
+        <!-- Begin Annuity Section-->        
+        <a href="https://cotaxaide.org/tools/Annuity%20Calculator.html"> Annuity/Pension Exclusion Calculator </a>
+        <span id = "popoutIconAnnuity"
+                onmouseover="popoutTextBoxAnnuity.style.display='inline-block';"
+                onmouseout="popoutTextBoxAnnuity.style.display='none';"
+                >?
+        </span>
+
+        <span id = "popoutTextBoxAnnuity">This webpage has:<br>
+                                            (1) Enter taxpayer information to determine how much of their annuity/pension is taxable.<br>
+                                            (2) Ability to print off a schedule for reference in future years.
+        </span>
+        <br>
+        <b> Last Updated: updated during tax season by cotaxaide.org/tools</b>
+        <br><br>
+        <!-- Begin Business Activity Codes Section-->        
+        <a href="https://cotaxaide.org/tools/Business%20Activity%20Codes.html"> Business Activity Codes </a>
+        <span id = "popoutIconAnnuity"
+                onmouseover="popoutTextBoxBusinessActivityCodes.style.display='inline-block';"
+                onmouseout="popoutTextBoxBusinessActivityCodes.style.display='none';"
+                >?
+        </span>
+
+        <span id = "popoutTextBoxBusinessActivityCodes">This is a webpage that allows you to quickly click through the various business activity codes to get the relevant number for the Schedule C/E<br>
+        </span>
+        <br>
+        <b> Last Updated: updated during tax season by cotaxaide.org/tools</b>
+        <br><br>
+        <!-- Begin Does a Dependent Need to File Section-->        
+        <a href="https://www.dropbox.com/scl/fi/vgr7w4qpus0cb4zqxwmeo/Does-My-Dependent-Need-To-File.xlsx?dl=1"> Does a Dependent Need to File Federal? </a>
+        <span id = "popoutIconDependentFiling"
+                onmouseover="popoutTextBoxDependentFiling.style.display='inline-block';"
+                onmouseout="popoutTextBoxDependentFiling.style.display='none';"
+                >?
+        </span>
+
+        <span id = "popoutTextBoxDependentFiling">This excel has:<br>
+                                                    (1) Income test to determine whether a dependent is required to file their own Federal return or not.<br>
+                                                    (2) List of non-income related situations where a dependent would be required to file a Federal return.
+        </span>
+        <br>
+        <b> Last Updated: 05/30/2022</b>
+        <br><br>
+        <!-- Begin Dependent Qualification Calculator Section-->        
+        <a href="https://cotaxaide.org/tools/Dependent%20Qualification%20Calculator.html"> Dependent Qualification Calculator </a>
+        <span id = "popoutIconDepQual"
+                onmouseover="popoutTextBoxDepQual.style.display='inline-block';"
+                onmouseout="popoutTextBoxDepQual.style.display='none';"
+                >?
+        </span>
+
+        <span id = "popoutTextBoxDepQual">This web-based tool is a quick way to find out:<br>
+                                            (1) Is a person eligible to be claimed as a dependent<br>
+                                            (2) What Deductions/Credits the potential dependent qualifies for.<br>
+                                            Note: If trying to explain to taxpayer, I recommend using the excel-based checklists I create. However, this is a great tool for self-use.
+        </span>
+        <br>
+        <b> Last Updated: updated during tax season by cotaxaide.org/tools</b>
+        <br><br>
+        <!-- Begin IRA Form 8606 Section-->        
+        <a href="https://cotaxaide.org/tools/IRA%20Worksheet.html"> IRA Form 8606 Exclusion Calcuator </a>
+        <span id = "popoutIconIRAForm8606"
+                onmouseover="popoutTextBoxIRAForm8606.style.display='inline-block';"
+                onmouseout="popoutTextBoxIRAForm8606.style.display='none';"
+                >?
+        </span>
+
+        <span id = "popoutTextBoxIRAForm8606">
+                                            Form 8606 is needed in 3 situations listed below. This tool is designed to calculate the taxable vs. non-taxable portion for Part 1 situations. <br>
+                                            ........(Part 1) Non-deductible contributions/distributions to/from a Traditional/SIMPLE/SEP that contains a non-deductible contribution.<br>
+                                            ........(Part 2) Rollover of Traditional/SIMPLE/SEP IRA to Roth IRA, and <br>
+                                            ........(Part 3) Distribution from Roth IRA<br>
+                                            
+        </span>
+        <br>
+        <b> Last Updated: updated during tax season by cotaxaide.org/tools</b>
+        <br><br>
+        <!-- Begin Sales Tax Estimate Section-->        
+        <a href="https://www.irs.gov/credits-deductions/individuals/use-the-sales-tax-deduction-calculator"> Sales Tax Estimator on IRS.gov </a>
+        <span id = "popoutIconAnnuity"
+                onmouseover="popoutTextBoxSalesTax.style.display='inline-block';"
+                onmouseout="popoutTextBoxSalesTax.style.display='none';"
+                >?
+        </span>
+
+        <span id = "popoutTextBoxSalesTax">This is the official IRS.gov tool for esimating your sales tax paid for the year. This is only needed for Schedule A Line 5 if client is itemizing deductions.<br>
+        </span>
+        <br>
+        <b> Last Updated: updated by the IRS</b>
+        <br><br>
+        <!-- Begin Schedule A Line 5 Section-->        
+        <a href="https://www.dropbox.com/scl/fi/v6gfwd6hdenzn784curwl/Schedule-A-Line-5.xlsx?dl=1"> Schedule A Line 5 Calculation </a>
+        <span id = "popoutIconAnnuity"
+                onmouseover="popoutTextBoxSchALine5.style.display='inline-block';"
+                onmouseout="popoutTextBoxSchALine5.style.display='none';"
+                >?
+        </span>
+
+        <span id = "popoutTextBoxSchALine5">Calculates Schedule A Line 5<br>
+        </span>
+        <br>
+        <b> Last Updated: 5/29/2022</b>
+        <br><br>
+        <!-- Begin Social Security Taxation Calculator Section-->        
+        <a href="https://www.dropbox.com/scl/fi/o7ht9vp9f779ovf1vxcrs/SS-Benefits-Calculator.xlsx?dl=1"> Social Security Taxation Calculator </a>
+        <span id = "popoutIconIRAForm8606"
+                onmouseover="popoutTextBoxSSTaxation.style.display='inline-block';"
+                onmouseout="popoutTextBoxSSTaxation.style.display='none';"
+                >?
+        </span>
+
+        <span id = "popoutTextBoxSSTaxation">
+                                            This excel workbook has:<br>
+                                                (1) Walkthrough for calculating taxability of taxpayer's social security. Helps when explaining to taxpayer.<br>
+                                                (2) Figures for the Social Security Benefits Worksheet. Helps to audit the software.<br>
+                                                (3) Ability to see other scenerios. Useful for planning purposes.<br>
+        </span>
+        <br>
+        <b> Last Updated: 05/29/2022</b>
+        <br><br>
+        <!-- Begin State Refund Taxability Calculator Section-->        
+        <a href="https://cotaxaide.org/tools/Refund%20Calculator.html"> State Refund Taxability Calculator </a>
+        <span id = "popoutIconStateRefund"
+                onmouseover="popoutTextBoxStateRefund.style.display='inline-block';"
+                onmouseout="popoutTextBoxStateRefund.style.display='none';"
+                >?
+        </span>
+
+        <span id = "popoutTextBoxStateRefund">This is a webpage that calculates the taxability of a state refund if you itemized in the prior year.<br>
+                                            
+        </span>
+        <br>
+        <b> Last Updated: updated during tax season by cotaxaide.org/tools</b>
+        <br><br>
+        <!-- Begin Statutory Employee, Non-Statutory Employee, and Independent Contractor Information Section-->        
+        <a href="https://www.dropbox.com/scl/fi/7bmemju3mp3nqla05dyxw/Independent-Contractor-Statutory-Employee-Definitions.xlsx?dl=1"> Statutory Employee, Non-Statutory Employee, and Independent Contractor Info </a>
+        <span id = "popoutIconStatutoryEmployee"
+                onmouseover="popoutTextBoxStatutoryEmployee.style.display='inline-block';"
+                onmouseout="popoutTextBoxStatutoryEmployee.style.display='none';"
+                >?
+        </span>
+
+        <span id = "popoutTextBoxStatutoryEmployee">This excel defines and shows the forms to be filed for the 4 different types of worker classifications:<br>
+                                                        (1) Common Law Employee<br>
+                                                        (2) Independent Contractor<br>
+                                                        (3) Statutory Employee<br>
+                                                        (4) Non-Statutory Employee                                 
+        </span>
+        <br>
+        <b> Last Updated: 05/30/2022</b>
+        <br><br>
+        <h3><u> Deductions </u></h3>
+         <!-- Beging SD Section-->        
+         <a href="https://www.dropbox.com/scl/fi/y4fu5fg98adhyfc0t9a6q/Deduction-Changes.xlsm?dl=1"> Standard Deduction & Personal Exemption Calculator </a>
+         <span id = "popoutIconSD"
+                 onmouseover="popoutTextBoxSD.style.display='inline-block';"
+                 onmouseout="popoutTextBoxSD.style.display='none';"
+                 >?
+         </span>
+ 
+         <span id = "popoutTextBoxSD">This excel workbook has:<br>
+                                     (1) Standard deduction & personal exemption data back to 2017 <br> 
+                                     (2) Enter taxpayer data and compare standard deduction with different filing statuses and prior tax years.
+         </span>
+         <br>
+         <b> Last Updated: 05/28/2022</b>
+         <br><br>
+        <h3><u> Credits </u></h3>
+        <!-- Beging EIC Section-->        
+        <a href="https://www.dropbox.com/scl/fi/o70on0ix6xonvagus3pvu/Earned-Income-Credit-Bell-Chart.xlsm?dl=1"> Earned Income Tax Credit Excel </a>
+        <span id = "popoutIconEIC"
+				onmouseover="popoutTextBoxEIC.style.display='inline-block';"
+				onmouseout="popoutTextBoxEIC.style.display='none';"
+				>?
+        </span>
+
+        <span id = "popoutTextBoxEIC">This excel workbook has:<br>
+                                    (1) Checklist to determine eligibility. <br> 
+                                    (2) Graph to visualize the EIC and see where the taxpayer falls.
+        </span>
+        <br>
+        <b> Last Updated: 05/28/2022</b>
+        <br><br>
+        <!-- Beging Education Credit Optimizer Section-->
+        <a href="https://www.dropbox.com/scl/fi/o70on0ix6xonvagus3pvu/Earned-Income-Credit-Bell-Chart.xlsm?dl=1"> Education Credit Optimizer </a>
+        <span id = "popoutIconEducationOptimize"
+				onmouseover="popoutTextBoxEducationOptimize.style.display='inline-block';"
+				onmouseout="popoutTextBoxEducationOptimize.style.display='none';"
+				>?
+        </span>
+
+        <span id = "popoutTextBoxEducationOptimize">This is a web-based tool that allows you to enter your tax information of the taxpayer and all potential dependents to determine which education credits would give you the greatest tax benefit.<br>
+        </span>
+        <br>
+        <b> Last Updated: updated during tax season by cotaxaide.org/tools</b>
+        <br><br>
+        <h3><u> Determining Tax </u></h3>
+        <!-- Begin Federal Tax Calculator Section-->        
+        <a href="https://www.dropbox.com/scl/fi/58xi0auhzy3lnemvovhl0/Basic-Tax-Calc.xlsx?dl=1"> Federal Tax Calculator - Basic </a>
+        <span id = "popoutIconFedTax"
+				onmouseover="popoutTextBoxFedTax.style.display='inline-block';"
+				onmouseout="popoutTextBoxFedTax.style.display='none';"
+				>?
+        </span>
+
+        <span id = "popoutTextBoxFedTax">This excel workbook is used to visualize and explain how the Federal 1040 tax (called "tax" on 1040) is calculated from Taxable Income.<br>
+                                        This is not used to calculate the final tax amount (called "total tax" on 1040).<br>
+                                        It does not consider higher capital gains rates for 1250 or collectibles.<br>
+        </span>
+        <br>
+        <b> Last Updated: 05/30/2022</b>
+        <br><br>
+        <!-- Begin Withholding Visual Section-->        
+        <a href="https://www.dropbox.com/scl/fi/1of3f1juq00uu6h4rit2f/Withholding-Percentages.xlsm?dl=1"> Withholding Visual </a>
+        <span id = "popoutIconWithholdingVisual"
+				onmouseover="popoutTextBoxWithholdingVisual.style.display='inline-block';"
+				onmouseout="popoutTextBoxWithholdingVisual.style.display='none';"
+				>?
+        </span>
+
+        <span id = "popoutTextBoxWithholdingVisual">This excel workbook is used to:<br>
+                                                    (1) Visualize withholding percentages on each income document for both federal and one state. <br>
+                                                    (2) See overall withholding percent and how it compares to effective tax rate.
+        </span>
+        <br>
+        <b> Last Updated: 06/03/2022</b>
+        <br><br>
+        <h3><u> Expired Programs </u></h3>
+        <!-- Begin COVID Section-->        
+        <a href="https://www.dropbox.com/scl/fi/vewnnznu4qjkzacj118i8/COVID-Templates.xlsx?dl=1"> COVID Programs </a>
+        <span id = "popoutIconCOVID"
+                onmouseover="popoutTextBoxCOVID.style.display='inline-block';"
+                onmouseout="popoutTextBoxCOVID.style.display='none';"
+                >?
+        </span>
+
+        <span id = "popoutTextBoxCOVID">This excel workbook contains:<br>
+                                                    (1) COVID Stimulus Calculator (a.k.a. Recovery Rebate Credit)<br>
+                                                    (2) Employee Retention Credit Calculator<br>
+                                                    (3) Sick and Family Leave Calculator<br>
+                                                    (4) Trump's Payroll Tax Deferral Calculator<br>
+                                                    Note that stimulus was live tested and confirmed to be correct. The others were never live tested and could contain calculation errors.
+        </span>
+        <br>
+        <b> Last Updated: 03/08/2022</b>
+        <br><br>
+
+        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+        
+        </div>
+
+    </body>
+
+</html>
+
+<!-- NOTES-->
+    <!-- Even though taxvolunteers.com has put a lock on their website, all of the HTML tools are hosted on Jeff Bogart's "Colorado Resource Toolbox".
+    Taxvolunteers.com only links to it. You can find the tools at the address here:
+    https://cotaxaide.org/tools-->
